@@ -1,4 +1,5 @@
 import './App.css';
+import './WikiPage.css'
 import { useState } from 'react';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import WikiPage from './WikiPage';
@@ -16,9 +17,7 @@ function App() {
 
   return (
     <div className='container'>
-      <Routes>
-        <Route path='/wiki/:searchQuery' element={<WikiPage></WikiPage>}></Route>
-      </Routes>
+      
       <header>
         <h1>Lethal Company WIKI</h1>
         <div className='search-container'>
@@ -33,6 +32,11 @@ function App() {
           ></input>
         </div>
       </header>
+      <main>
+        <Routes>
+          <Route path='/wiki/:searchQuery' element={<WikiPage></WikiPage>}></Route>
+        </Routes>
+      </main>
     </div>
   );
 }
